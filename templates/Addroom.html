@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Add rooms to rent
+{% endblock title %}
+{% block body %}
+<h2>Add a Room</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="roomid">Room ID</label>
+        <input type="number" class="form-control" id="roomid" name="roomid" placeholder="Enter room id" required>
+        <small id="roomidHelp" class="form-text text-muted">Enter the unique room id to add.</small>
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" class="form-control" id="status" name="status" placeholder="booked/vacant" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if message %}
+    <p>{{ message }}</p>  <!-- Display success/error message if provided -->
+{% endif %}
+{% endblock body %}

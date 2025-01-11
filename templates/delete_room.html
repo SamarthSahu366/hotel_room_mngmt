@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+Add rooms to rent
+{% endblock title %}
+{% block body %}
+<h2>delete a Room</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="roomid">Room ID</label>
+        <input type="number" class="form-control" id="roomid" name="roomid" placeholder="Enter room id" required>
+        <small id="roomidHelp" class="form-text text-muted">Enter the unique room id to delete room.</small>
+    </div>
+    <button type="submit" class="btn btn-primary">delete</button>
+</form>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+{% endblock body %}

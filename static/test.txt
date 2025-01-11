@@ -1,0 +1,1 @@
+static folder is used to store or server the public things to show every user i.e any user can access this files
