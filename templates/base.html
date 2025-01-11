@@ -8,31 +8,61 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title> {% block title %} {% endblock title %}| Hello, world!</title>
+    <title>{% block title %}{% endblock title %}| Hello, world!</title>
     
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href="{% url 'admin_view_all_rooms' %}" class="nav-link">View All Rooms</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'admin_add_rooms' %}" class="nav-link">Add Room</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'admin_update_room' %}" class="nav-link">Update Room</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'admin_delete_room' %}" class="nav-link">Delete Room</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'search_available_rooms' %}" class="nav-link">avaibleRooms</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'book_room' %}" class="nav-link">bookRoom</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'cancel_booking' %}" class="nav-link">cancelBooking</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+  </nav>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a href="/rooms" class="nav-link">View All Rooms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/viewallrooms">viewallrooms</a> 
+              <a href="/rooms/add" class="nav-link">Add Room</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/addroom">AddRoom</a> 
+              <a href="/rooms/update" class="nav-link">Update Room</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/updateroom">UpdateRoom</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="/deleteroom">DeleteRoom</a>
+              <a href="/rooms/delete" class="nav-link">Delete Room</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
